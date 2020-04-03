@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  IOSDemo
+
+  Created by Duy Thien Chau on 4/2/20.
+  Copyright © 2020 Duy Thien Chau. All rights reserved.
+*/
+
+// Welcome
+"welcome" = "Welcome to The Contacts";
+
+// Signin
+"signin" = "Sign In";
+"password" = "Password";
+"emailInput" = "Please enter your email";
+"passInput" = "Please enter your password";
+"forgot" = "Forget password?";
+"signinError" = "Please enter correct email and password";
+
+// Home
+"logout" = "Logout confirmation?";
+"cancel" = "Cancel";
+"loading" = "Loading...";
+"serverError" = "Server Error";
+"parseError" = "Parsing Error";

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ContactEntity" representedClassName="ContactEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="cell" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationEntity"/>
+        <relationship name="name" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NameEntity"/>
+        <relationship name="picture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PictureEntity"/>
+    </entity>
+    <entity name="CoordinatesEntity" representedClassName="CoordinatesEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="latitude" optional="YES" attributeType="String"/>
+        <attribute name="longitude" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="LocationEntity" representedClassName="LocationEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+        <relationship name="coordinates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoordinatesEntity"/>
+    </entity>
+    <entity name="NameEntity" representedClassName="NameEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="first" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="last" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PictureEntity" representedClassName="PictureEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="large" optional="YES" attributeType="String"/>
+        <attribute name="medium" optional="YES" attributeType="String"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="ContactEntity" positionX="-57.06640625" positionY="-393.3515625" width="128" height="148"/>
+        <element name="NameEntity" positionX="172.5859375" positionY="-320.34765625" width="128" height="103"/>
+        <element name="PictureEntity" positionX="92.33203125" positionY="-162.36328125" width="128" height="103"/>
+        <element name="CoordinatesEntity" positionX="-67.66796875" positionY="-145.80859375" width="128" height="88"/>
+        <element name="LocationEntity" positionX="-245.40234375" positionY="-211.25" width="128" height="118"/>
+    </elements>
+</model>

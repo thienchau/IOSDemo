@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  IOSDemo
+
+  Created by Duy Thien Chau on 4/2/20.
+  Copyright © 2020 Duy Thien Chau. All rights reserved.
+*/
+
+// Welcome
+"welcome" = "Chào mừng đến với The Contacts";
+
+// Signin
+"signin" = "Đăng Nhập";
+"password" = "Mật Khẩu";
+"emailInput" = "Nhập email của bạn";
+"passInput" = "Nhập password của bạn";
+"forgot" = "Quên mật khẩu?";
+"signinError" = "Hãy nhập đúng email và mật khẩu";
+
+// Home
+"logout" = "Xác nhận đăng xuất?";
+"cancel" = "Hủy";
+"loading" = "Đang tải...";
+"serverError" = "Lỗi Server";
+"parseError" = "Lỗi Parsing";
