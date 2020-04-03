@@ -18,3 +18,9 @@
 + NotificationCenter
 + Unit Testing
 + UI Testing
+
+![alt test](Media/video.mp4)
+
+![alt test](Media/home.png) ![alt test](Media/home_dark.png)
+
+![alt test](Media/coredata.png)
