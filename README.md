@@ -19,8 +19,11 @@
 + Unit Testing
 + UI Testing
 
-[![Watch the video](https://img.youtube.com/vi/fPT2M6L-7nA/maxresdefault.jpg)](https://youtu.be/fPT2M6L-7nA)
+## Video
+[![Watch the video](https://img.youtube.com/vi/fPT2M6L-7nA/hqdefault.jpg)](https://youtu.be/fPT2M6L-7nA)
 
+## Screenshots
 ![alt test](Media/home.png) ![alt test](Media/home_dark.png)
 
+## Core Data
 ![alt test](Media/coredata.png)
