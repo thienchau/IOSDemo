@@ -19,7 +19,7 @@
 + Unit Testing
 + UI Testing
 
-![alt test](Media/video.mp4)
+[![Watch the video](https://img.youtube.com/vi/fPT2M6L-7nA/maxresdefault.jpg)](https://youtu.be/fPT2M6L-7nA)
 
 ![alt test](Media/home.png) ![alt test](Media/home_dark.png)
 
