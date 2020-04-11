@@ -296,7 +296,6 @@
 		89AC9CE224369CC400703E9E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				89AC9D082436A2EA00703E9E /* ManagedObject */,
 				89AC9D002436A0CE00703E9E /* ContactListViewModel.swift */,
 				89AC9D062436A27D00703E9E /* ContactRowViewModel.swift */,
 				89AC9CEA24369E3900703E9E /* ContactDetailViewModel.swift */,
@@ -307,6 +306,7 @@
 		89AC9CE324369CCF00703E9E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				89AC9D082436A2EA00703E9E /* ManagedObject */,
 				89AC9CEE24369E9100703E9E /* GetUsersResponse.swift */,
 				89AC9CF024369EB500703E9E /* Contact.swift */,
 				8969738E2436DFE800BE3A3B /* Coordinates.swift */,
