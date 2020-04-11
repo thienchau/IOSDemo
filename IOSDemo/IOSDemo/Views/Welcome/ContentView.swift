@@ -18,7 +18,8 @@ struct ContentView: View {
     
     @State var viewType = WelcomeType.splash
     @State var showSplash = true
-
+    @State var loginNoti: NSObjectProtocol?
+    @State var logoutNoti: NSObjectProtocol?
     
     var body: some View {
         
@@ -45,20 +46,17 @@ struct ContentView: View {
             }
         }
         .onAppear() {
-            NotificationCenter.default.addObserver(forName: .didLogin, object: nil, queue: nil, using: self.onDidLogin)
-            NotificationCenter.default.addObserver(forName: .didLogout, object: nil, queue: nil, using: self.onDidLogout)
+            self.loginNoti = NotificationCenter.default.addObserver(forName: .didLogin, object: nil, queue: nil) {_ in
+                self.viewType = .home
+            }
+            self.logoutNoti = NotificationCenter.default.addObserver(forName: .didLogout, object: nil, queue: nil) {_ in
+                self.viewType = .login
+            }
         }
         .onDisappear() {
-            NotificationCenter.default.removeObserver(self)
+            NotificationCenter.default.removeObserver(self.loginNoti!)
+            NotificationCenter.default.removeObserver(self.logoutNoti!)
         }
-    }
-    
-    func onDidLogin(_ notification:Notification) {
-        self.viewType = .home
-    }
-    
-    func onDidLogout(_ notification:Notification) {
-        self.viewType = .login
     }
 }
 
