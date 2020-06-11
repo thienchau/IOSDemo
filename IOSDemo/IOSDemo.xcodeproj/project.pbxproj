@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890CD6DC2491F51700ED3977 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6DB2491F51700ED3977 /* NetworkService.swift */; };
+		890CD6DE2491F52D00ED3977 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6DD2491F52D00ED3977 /* NetworkServiceType.swift */; };
+		890CD6E02491F54200ED3977 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6DF2491F54200ED3977 /* Resource.swift */; };
+		890CD6E22491F5D500ED3977 /* PublisherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6E12491F5D500ED3977 /* PublisherUtils.swift */; };
+		890CD6E62491F69700ED3977 /* ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6E52491F69700ED3977 /* ServicesProvider.swift */; };
+		890CD6E82491F7A900ED3977 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6E72491F7A900ED3977 /* ApiConstants.swift */; };
+		890CD6EB2491F88400ED3977 /* ResourceUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6EA2491F88400ED3977 /* ResourceUsers.swift */; };
+		890CD6ED2491F9C900ED3977 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6EC2491F9C900ED3977 /* UsersService.swift */; };
+		890CD6EF249209E500ED3977 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6EE249209E500ED3977 /* Scheduler.swift */; };
 		8969738F2436DFE800BE3A3B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8969738E2436DFE800BE3A3B /* Coordinates.swift */; };
 		896973912436E01D00BE3A3B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896973902436E01D00BE3A3B /* Location.swift */; };
 		896973932436E03200BE3A3B /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896973922436E03200BE3A3B /* Picture.swift */; };
@@ -23,7 +32,6 @@
 		89AC9CD024369BFA00703E9E /* IOSDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9CCF24369BFA00703E9E /* IOSDemoUITests.swift */; };
 		89AC9CE924369E0100703E9E /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9CE824369E0100703E9E /* ContactDetailView.swift */; };
 		89AC9CEB24369E3900703E9E /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9CEA24369E3900703E9E /* ContactDetailViewModel.swift */; };
-		89AC9CED24369E6900703E9E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9CEC24369E6900703E9E /* APIService.swift */; };
 		89AC9CEF24369E9100703E9E /* GetUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9CEE24369E9100703E9E /* GetUsersResponse.swift */; };
 		89AC9CF124369EB500703E9E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9CF024369EB500703E9E /* Contact.swift */; };
 		89AC9CF324369ED900703E9E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9CF224369ED900703E9E /* CoreDataManager.swift */; };
@@ -34,7 +42,6 @@
 		89AC9CFD24369FB400703E9E /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9CFC24369FB400703E9E /* ColorExtension.swift */; };
 		89AC9CFF2436A06800703E9E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9CFE2436A06800703E9E /* LoadingView.swift */; };
 		89AC9D012436A0CE00703E9E /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D002436A0CE00703E9E /* ContactListViewModel.swift */; };
-		89AC9D032436A12400703E9E /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D022436A12400703E9E /* APIServiceError.swift */; };
 		89AC9D052436A1AC00703E9E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D042436A1AC00703E9E /* LoginView.swift */; };
 		89AC9D072436A27D00703E9E /* ContactRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D062436A27D00703E9E /* ContactRowViewModel.swift */; };
 		89AC9D0A2436A30A00703E9E /* PictureEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D092436A30A00703E9E /* PictureEntity.swift */; };
@@ -44,11 +51,9 @@
 		89AC9D122436A34A00703E9E /* ContactEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D112436A34A00703E9E /* ContactEntity.swift */; };
 		89AC9D142436A4CC00703E9E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D132436A4CC00703E9E /* WelcomeView.swift */; };
 		89AC9D162436A51B00703E9E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D152436A51B00703E9E /* HomeView.swift */; };
-		89AC9D182436A61400703E9E /* APIRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D172436A61400703E9E /* APIRequestType.swift */; };
 		89AC9D1B2436A6E600703E9E /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 89AC9D1A2436A6E600703E9E /* URLImage */; };
 		89AC9D1D2436A96F00703E9E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D1C2436A96F00703E9E /* MapView.swift */; };
 		89AC9D212436ADF200703E9E /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D202436ADF200703E9E /* ContactRowView.swift */; };
-		89AC9D232436AEEC00703E9E /* UserRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D222436AEEC00703E9E /* UserRequestType.swift */; };
 		89AC9D252436B00C00703E9E /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D242436B00C00703E9E /* AppDefaults.swift */; };
 		89AC9D282436B70600703E9E /* APIDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC9D272436B70600703E9E /* APIDataTests.swift */; };
 		89BF375C2436BD1700C864D3 /* monof55.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89BF375B2436BD1700C864D3 /* monof55.ttf */; };
@@ -72,6 +77,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		890CD6DB2491F51700ED3977 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		890CD6DD2491F52D00ED3977 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
+		890CD6DF2491F54200ED3977 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		890CD6E12491F5D500ED3977 /* PublisherUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherUtils.swift; sourceTree = "<group>"; };
+		890CD6E52491F69700ED3977 /* ServicesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesProvider.swift; sourceTree = "<group>"; };
+		890CD6E72491F7A900ED3977 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		890CD6EA2491F88400ED3977 /* ResourceUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceUsers.swift; sourceTree = "<group>"; };
+		890CD6EC2491F9C900ED3977 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
+		890CD6EE249209E500ED3977 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		8969738E2436DFE800BE3A3B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		896973902436E01D00BE3A3B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		896973922436E03200BE3A3B /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
@@ -95,7 +109,6 @@
 		89AC9CD124369BFA00703E9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89AC9CE824369E0100703E9E /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 		89AC9CEA24369E3900703E9E /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
-		89AC9CEC24369E6900703E9E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		89AC9CEE24369E9100703E9E /* GetUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersResponse.swift; sourceTree = "<group>"; };
 		89AC9CF024369EB500703E9E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		89AC9CF224369ED900703E9E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -106,7 +119,6 @@
 		89AC9CFC24369FB400703E9E /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		89AC9CFE2436A06800703E9E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		89AC9D002436A0CE00703E9E /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
-		89AC9D022436A12400703E9E /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
 		89AC9D042436A1AC00703E9E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		89AC9D062436A27D00703E9E /* ContactRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowViewModel.swift; sourceTree = "<group>"; };
 		89AC9D092436A30A00703E9E /* PictureEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureEntity.swift; sourceTree = "<group>"; };
@@ -116,10 +128,8 @@
 		89AC9D112436A34A00703E9E /* ContactEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEntity.swift; sourceTree = "<group>"; };
 		89AC9D132436A4CC00703E9E /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		89AC9D152436A51B00703E9E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		89AC9D172436A61400703E9E /* APIRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestType.swift; sourceTree = "<group>"; };
 		89AC9D1C2436A96F00703E9E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		89AC9D202436ADF200703E9E /* ContactRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
-		89AC9D222436AEEC00703E9E /* UserRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequestType.swift; sourceTree = "<group>"; };
 		89AC9D242436B00C00703E9E /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 		89AC9D272436B70600703E9E /* APIDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataTests.swift; sourceTree = "<group>"; };
 		89BF375B2436BD1700C864D3 /* monof55.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = monof55.ttf; sourceTree = "<group>"; };
@@ -151,20 +161,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		890CD6DA2491F49C00ED3977 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				890CD6DB2491F51700ED3977 /* NetworkService.swift */,
+				890CD6DD2491F52D00ED3977 /* NetworkServiceType.swift */,
+				890CD6DF2491F54200ED3977 /* Resource.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		890CD6E92491F86900ED3977 /* UsersService */ = {
+			isa = PBXGroup;
+			children = (
+				890CD6EC2491F9C900ED3977 /* UsersService.swift */,
+				890CD6EA2491F88400ED3977 /* ResourceUsers.swift */,
+				895A90502491AE44006C2E5D /* Responses */,
+			);
+			path = UsersService;
+			sourceTree = "<group>";
+		};
 		895A90502491AE44006C2E5D /* Responses */ = {
 			isa = PBXGroup;
 			children = (
 				89AC9CEE24369E9100703E9E /* GetUsersResponse.swift */,
 			);
 			path = Responses;
-			sourceTree = "<group>";
-		};
-		895A90512491AE4F006C2E5D /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				89AC9D222436AEEC00703E9E /* UserRequestType.swift */,
-			);
-			path = Requests;
 			sourceTree = "<group>";
 		};
 		896973962436E15E00BE3A3B /* ContactDetail */ = {
@@ -287,6 +309,7 @@
 				89AC9CF624369F1C00703E9E /* StringExtension.swift */,
 				89AC9CF824369F4D00703E9E /* NotificationNameExtension.swift */,
 				89AC9CFA24369F9800703E9E /* NSManagedObjectContactExtension.swift */,
+				890CD6E12491F5D500ED3977 /* PublisherUtils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,11 +382,11 @@
 		89AC9CE724369D6400703E9E /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				895A90512491AE4F006C2E5D /* Requests */,
-				895A90502491AE44006C2E5D /* Responses */,
-				89AC9CEC24369E6900703E9E /* APIService.swift */,
-				89AC9D022436A12400703E9E /* APIServiceError.swift */,
-				89AC9D172436A61400703E9E /* APIRequestType.swift */,
+				890CD6E92491F86900ED3977 /* UsersService */,
+				890CD6DA2491F49C00ED3977 /* Network */,
+				890CD6E52491F69700ED3977 /* ServicesProvider.swift */,
+				890CD6E72491F7A900ED3977 /* ApiConstants.swift */,
+				890CD6EE249209E500ED3977 /* Scheduler.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -539,19 +562,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89AC9D182436A61400703E9E /* APIRequestType.swift in Sources */,
+				890CD6E02491F54200ED3977 /* Resource.swift in Sources */,
 				89AC9D162436A51B00703E9E /* HomeView.swift in Sources */,
+				890CD6ED2491F9C900ED3977 /* UsersService.swift in Sources */,
 				89AC9CF124369EB500703E9E /* Contact.swift in Sources */,
+				890CD6E62491F69700ED3977 /* ServicesProvider.swift in Sources */,
 				89AC9CB024369BF600703E9E /* IOSDemo.xcdatamodeld in Sources */,
 				89AC9D102436A34200703E9E /* CoordinatesEntity.swift in Sources */,
 				89AC9D252436B00C00703E9E /* AppDefaults.swift in Sources */,
 				896973952436E04300BE3A3B /* Name.swift in Sources */,
-				89AC9CED24369E6900703E9E /* APIService.swift in Sources */,
 				89AC9D0C2436A32500703E9E /* NameEntity.swift in Sources */,
 				89AC9CEF24369E9100703E9E /* GetUsersResponse.swift in Sources */,
 				89AC9CFB24369F9800703E9E /* NSManagedObjectContactExtension.swift in Sources */,
 				89AC9CFF2436A06800703E9E /* LoadingView.swift in Sources */,
 				896973932436E03200BE3A3B /* Picture.swift in Sources */,
+				890CD6DC2491F51700ED3977 /* NetworkService.swift in Sources */,
 				89AC9CAB24369BF600703E9E /* AppDelegate.swift in Sources */,
 				89AC9CB224369BF700703E9E /* ContentView.swift in Sources */,
 				89AC9D072436A27D00703E9E /* ContactRowViewModel.swift in Sources */,
@@ -560,19 +585,22 @@
 				89AC9D1D2436A96F00703E9E /* MapView.swift in Sources */,
 				89AC9D012436A0CE00703E9E /* ContactListViewModel.swift in Sources */,
 				8969738F2436DFE800BE3A3B /* Coordinates.swift in Sources */,
+				890CD6EB2491F88400ED3977 /* ResourceUsers.swift in Sources */,
 				89AC9CEB24369E3900703E9E /* ContactDetailViewModel.swift in Sources */,
 				89AC9D0A2436A30A00703E9E /* PictureEntity.swift in Sources */,
 				89AC9CFD24369FB400703E9E /* ColorExtension.swift in Sources */,
 				896973912436E01D00BE3A3B /* Location.swift in Sources */,
 				89AC9CF724369F1C00703E9E /* StringExtension.swift in Sources */,
-				89AC9D032436A12400703E9E /* APIServiceError.swift in Sources */,
 				89AC9D142436A4CC00703E9E /* WelcomeView.swift in Sources */,
+				890CD6E22491F5D500ED3977 /* PublisherUtils.swift in Sources */,
 				89AC9CF924369F4D00703E9E /* NotificationNameExtension.swift in Sources */,
 				89AC9CF524369EFF00703E9E /* UIColorExtension.swift in Sources */,
+				890CD6E82491F7A900ED3977 /* ApiConstants.swift in Sources */,
 				89AC9D122436A34A00703E9E /* ContactEntity.swift in Sources */,
 				89AC9D052436A1AC00703E9E /* LoginView.swift in Sources */,
-				89AC9D232436AEEC00703E9E /* UserRequestType.swift in Sources */,
+				890CD6DE2491F52D00ED3977 /* NetworkServiceType.swift in Sources */,
 				89AC9D0E2436A33100703E9E /* LocationEntity.swift in Sources */,
+				890CD6EF249209E500ED3977 /* Scheduler.swift in Sources */,
 				89AC9CF324369ED900703E9E /* CoreDataManager.swift in Sources */,
 				89AC9CE924369E0100703E9E /* ContactDetailView.swift in Sources */,
 			);
