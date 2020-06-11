@@ -2,8 +2,10 @@
 
 + Swift 5
 + MVVM Architecture Pattern
++ SwiftUI
++ Combine framework
++ Animation
 + Singleton
-+ SwiftUI + Animation
 + API service with URLSession
 + Core Data
 + Error Handler
@@ -12,12 +14,12 @@
 + Generic
 + UserDefaults
 + Internationalization and localization
-+ Support Dark Mode
-+ Cutomize Fonts
++ Supporting Dark Mode
++ Custom Fonts
 + Swift Package
 + NotificationCenter
-+ Unit Testing
-+ UI Testing
++ Unit Testing example
++ UI Testing example
 
 ## Video
 [![Watch the video](https://img.youtube.com/vi/fPT2M6L-7nA/hqdefault.jpg)](https://youtu.be/fPT2M6L-7nA)
