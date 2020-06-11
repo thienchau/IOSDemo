@@ -25,9 +25,9 @@ final class ContactListViewModel: ContactListViewModelProtocol {
     @Published var loading = false
     @Published private(set) var contactRowViewModels : [Item] = []
     
-    var userService: UserSeviceType
+    var userService: UserSeviceProtocol
     
-    init(userService: UserSeviceType) {
+    init(userService: UserSeviceProtocol) {
         self.userService = userService
     }
     

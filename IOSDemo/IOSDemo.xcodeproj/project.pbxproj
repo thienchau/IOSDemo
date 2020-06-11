@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		890CD6DC2491F51700ED3977 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6DB2491F51700ED3977 /* NetworkService.swift */; };
-		890CD6DE2491F52D00ED3977 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6DD2491F52D00ED3977 /* NetworkServiceType.swift */; };
+		890CD6DE2491F52D00ED3977 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6DD2491F52D00ED3977 /* NetworkServiceProtocol.swift */; };
 		890CD6E02491F54200ED3977 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6DF2491F54200ED3977 /* Resource.swift */; };
 		890CD6E22491F5D500ED3977 /* PublisherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6E12491F5D500ED3977 /* PublisherUtils.swift */; };
 		890CD6E62491F69700ED3977 /* ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CD6E52491F69700ED3977 /* ServicesProvider.swift */; };
@@ -78,7 +78,7 @@
 
 /* Begin PBXFileReference section */
 		890CD6DB2491F51700ED3977 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		890CD6DD2491F52D00ED3977 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
+		890CD6DD2491F52D00ED3977 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		890CD6DF2491F54200ED3977 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		890CD6E12491F5D500ED3977 /* PublisherUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherUtils.swift; sourceTree = "<group>"; };
 		890CD6E52491F69700ED3977 /* ServicesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesProvider.swift; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 		890CD6DA2491F49C00ED3977 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				890CD6DD2491F52D00ED3977 /* NetworkServiceProtocol.swift */,
 				890CD6DB2491F51700ED3977 /* NetworkService.swift */,
-				890CD6DD2491F52D00ED3977 /* NetworkServiceType.swift */,
 				890CD6DF2491F54200ED3977 /* Resource.swift */,
 			);
 			path = Network;
@@ -598,7 +598,7 @@
 				890CD6E82491F7A900ED3977 /* ApiConstants.swift in Sources */,
 				89AC9D122436A34A00703E9E /* ContactEntity.swift in Sources */,
 				89AC9D052436A1AC00703E9E /* LoginView.swift in Sources */,
-				890CD6DE2491F52D00ED3977 /* NetworkServiceType.swift in Sources */,
+				890CD6DE2491F52D00ED3977 /* NetworkServiceProtocol.swift in Sources */,
 				89AC9D0E2436A33100703E9E /* LocationEntity.swift in Sources */,
 				890CD6EF249209E500ED3977 /* Scheduler.swift in Sources */,
 				89AC9CF324369ED900703E9E /* CoreDataManager.swift in Sources */,
