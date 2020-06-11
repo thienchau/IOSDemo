@@ -74,6 +74,6 @@ struct HomeView<Model>: View where Model: ContactListViewModelProtocol {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewModel: ContactListViewModel())
+        HomeView(viewModel: ContactListViewModel(userService: UserSerice(networkService: NetworkService())))
     }
 }

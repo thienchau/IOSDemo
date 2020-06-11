@@ -25,6 +25,12 @@ final class ContactListViewModel: ContactListViewModelProtocol {
     @Published var loading = false
     @Published private(set) var contactRowViewModels : [Item] = []
     
+    var userService: UserSeviceType
+    
+    init(userService: UserSeviceType) {
+        self.userService = userService
+    }
+    
     func loadData() {
         if CoreDataManager.shared.countContacts() > 0 {
             loadFromDatabase()
@@ -39,19 +45,19 @@ final class ContactListViewModel: ContactListViewModelProtocol {
     
     private func loadFromServer() {
         self.loading = true
-        APIService.shared.response(from: UserRequestType()) { result in
-            
-            switch result {
+        
+        let _ = self.userService.getUsers().sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                break
             case .failure(let error):
-                switch error {
-                case .responseError:
-                    self.errorMessage = "serverError"
-                case .parseError:
-                    self.errorMessage = "parseError"
-                }
-            case .success(let response):
-                if let response = response as? GetUserResponse {
-                    var contacts = response.results
+                print(error.localizedDescription)
+            }
+            self.loading = false
+        }
+            , receiveValue: { result in
+                switch result {
+                case .success(var contacts):
                     contacts.sort { (contact1, contact2) -> Bool in
                         return contact1.name.first < contact2.name.first
                     }
@@ -59,11 +65,11 @@ final class ContactListViewModel: ContactListViewModelProtocol {
                     CoreDataManager.shared.deleteAll()
                     CoreDataManager.shared.saveContacts(contacts: contacts)
                     self.errorMessage = ""
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
                 }
-            }
-            
-            self.loading = false
-        }
+        })
+        
     }
     
     private func loadFromDatabase() {
