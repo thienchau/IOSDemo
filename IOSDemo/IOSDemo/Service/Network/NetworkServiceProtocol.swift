@@ -1,5 +1,5 @@
 //
-//  NetworkServiceType.swift
+//  NetworkServiceProtocol.swift
 //  IOSDemo
 //
 //  Created by Duy Thien Chau on 6/10/20.
@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-protocol NetworkServiceType: AnyObject {
+protocol NetworkServiceProtocol: AnyObject {
 
     @discardableResult
     func load<T: Decodable>(_ resource: Resource<T>) -> AnyPublisher<Result<T, NetworkError>, Never>

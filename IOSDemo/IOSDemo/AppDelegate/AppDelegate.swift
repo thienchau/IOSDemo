@@ -22,11 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print("Family: \(family) Font names: \(names)")
 //        }
         
-//        APIService().response(from: UserRequestType()) {
-//            response, error in
-//            print(response)
-//        }
-        
         return true
     }
 

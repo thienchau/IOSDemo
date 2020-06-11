@@ -9,16 +9,16 @@
 import Foundation
 import Combine
 
-protocol UserSeviceType {
+protocol UserSeviceProtocol {
 
     func getUsers() -> AnyPublisher<Result<[Contact], Error>, Never>
 }
 
-final class UserSerice: UserSeviceType {
+final class UserSerice: UserSeviceProtocol {
 
-    private let networkService: NetworkServiceType
+    private let networkService: NetworkServiceProtocol
     
-    init(networkService: NetworkServiceType) {
+    init(networkService: NetworkServiceProtocol) {
         self.networkService = networkService
     }
     

@@ -9,14 +9,14 @@
 import Foundation
 
 class ServicesProvider {
-    let network: NetworkServiceType
+    let network: NetworkServiceProtocol
 
     static func defaultProvider() -> ServicesProvider {
         let network = NetworkService()
         return ServicesProvider(network: network)
     }
 
-    init(network: NetworkServiceType) {
+    init(network: NetworkServiceProtocol) {
         self.network = network
     }
 }

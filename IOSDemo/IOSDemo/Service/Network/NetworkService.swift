@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-final class NetworkService: NetworkServiceType {
+final class NetworkService: NetworkServiceProtocol {
     private let session: URLSession
     
     init(session: URLSession = URLSession(configuration: URLSessionConfiguration.ephemeral)) {
