@@ -9,15 +9,15 @@
 import SwiftUI
 import URLImage
 
-struct ContactRowView: View {
-    
-    @State var contactRowViewModel: ContactRowViewModel
+struct ContactRowView<Model>: View where Model: ContactRowViewModelProtocol {
+
+    var viewModel: Model
     
     var body: some View {
         
         HStack {
             
-            URLImage(self.contactRowViewModel.imageURL, content: {
+            URLImage(self.viewModel.imageURL, content: {
                 $0.image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -26,8 +26,8 @@ struct ContactRowView: View {
             })
             
             VStack(alignment: .leading) {
-                Text(self.contactRowViewModel.name).fontWeight(.semibold).foregroundColor(.titleText)
-                Text(self.contactRowViewModel.subContent).fontWeight(.light)
+                Text(self.viewModel.name).fontWeight(.semibold).foregroundColor(.titleText)
+                Text(self.viewModel.subContent).fontWeight(.light)
             }
             
         }.frame(height: 65)
@@ -36,6 +36,6 @@ struct ContactRowView: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactRowView(contactRowViewModel: ContactRowViewModel(Contact.default))
+        ContactRowView(viewModel: ContactRowViewModel(Contact.default))
     }
 }

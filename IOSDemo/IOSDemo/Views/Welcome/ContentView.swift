@@ -26,7 +26,7 @@ struct ContentView: View {
         ZStack {
             
             if self.viewType == .home {
-                HomeView()
+                HomeView(viewModel: ContactListViewModel())
             } else if self.viewType == .login {
                 LoginView()
             }

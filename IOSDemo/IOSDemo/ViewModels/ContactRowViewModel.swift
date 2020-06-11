@@ -8,12 +8,20 @@
 
 import Foundation
 
-final class ContactRowViewModel: Identifiable {
+protocol ContactRowViewModelProtocol: Identifiable {
+    var id: String { get }
+    var imageURL: URL { get }
+    var name: String { get }
+    var subContent: String { get }
+    var contact: Contact { get }
+}
+
+final class ContactRowViewModel: ContactRowViewModelProtocol {
     
-    var id: String
-    var imageURL: URL
-    var name: String
-    var subContent: String
+    private(set) var id: String
+    private(set) var imageURL: URL
+    private(set) var name: String
+    private(set) var subContent: String
     let contact: Contact
     
     init(_ contact: Contact) {

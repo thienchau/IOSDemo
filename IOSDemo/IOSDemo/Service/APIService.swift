@@ -19,8 +19,8 @@ final class APIService {
     private init(_ baseURL: URL) {
         self.baseURL = baseURL
     }
-    
-    func response<Request>(from requestType: Request, response: @escaping (Decodable?, APIServiceError?)->()) where Request : APIRequestType {
+    //Decodable?, APIServiceError?
+    func response<Request>(from requestType: Request, response: @escaping (Result<Decodable?, APIServiceError>)->()) where Request : APIRequestType {
         
         let pathURL = URL(string: requestType.path, relativeTo: self.baseURL)!
         var urlComponents = URLComponents(url: pathURL, resolvingAgainstBaseURL: true)!
@@ -32,20 +32,20 @@ final class APIService {
             
             guard let data = data else {
                 DispatchQueue.main.async {
-                    response(nil, APIServiceError.responseError)
+                    response(.failure(.responseError))
                 }
                 return
             }
             
             guard let decodedResponse = try? JSONDecoder().decode(Request.Response.self, from: data) else {
                 DispatchQueue.main.async {
-                    response(nil, APIServiceError.parseError)
+                    response(.failure(.parseError))
                 }
                 return
             }
             
             DispatchQueue.main.async {
-                response(decodedResponse, nil)
+                response(.success(decodedResponse))
             }
             
         }.resume()

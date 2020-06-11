@@ -9,14 +9,23 @@
 import Foundation
 import MapKit
 
-final class ContactDetailViewModel {
+protocol ContactDetailViewModelProtocol {
+    var imageURL: URL? { get }
+    var name: String { get }
+    var email: String { get }
+    var address: String { get }
+    var phone: String { get }
+    var coordinate: CLLocationCoordinate2D { get }
+}
+
+final class ContactDetailViewModel: ContactDetailViewModelProtocol {
     
-    var imageURL: URL?
-    var name: String
-    var email: String
-    var address: String
-    var phone: String
-    var coordinate: CLLocationCoordinate2D
+    private(set) var imageURL: URL?
+    private(set) var name: String
+    private(set) var email: String
+    private(set) var address: String
+    private(set) var phone: String
+    private(set) var coordinate: CLLocationCoordinate2D
     
     init(_ contact: Contact) {
         self.imageURL = URL(string: contact.picture.large)

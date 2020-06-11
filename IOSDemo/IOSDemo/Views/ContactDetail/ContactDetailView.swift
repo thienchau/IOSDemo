@@ -9,23 +9,22 @@
 import SwiftUI
 import URLImage
 
-struct ContactDetailView: View {
+struct ContactDetailView<Model>: View where Model: ContactDetailViewModelProtocol {
     
-    var contactDetailVM : ContactDetailViewModel
+    var viewModel : Model
     
     var body: some View {
-        
         
         ZStack {
             Color.mainBg.edgesIgnoringSafeArea(.all)
             
             VStack {
-                MapView(coordinate: contactDetailVM.coordinate)
+                MapView(coordinate: viewModel.coordinate)
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: 200)
                 
-                if contactDetailVM.imageURL != nil {
-                    URLImage(contactDetailVM.imageURL!, content: {
+                if viewModel.imageURL != nil {
+                    URLImage(viewModel.imageURL!, content: {
                         $0.image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -39,13 +38,12 @@ struct ContactDetailView: View {
                     })
                 }
                 
-                
                 VStack(alignment: .center) {
-                    Text(contactDetailVM.name)
+                    Text(viewModel.name)
                         .font(.title)
-                    Text(contactDetailVM.email)
+                    Text(viewModel.email)
                         .font(.subheadline)
-                    Text(contactDetailVM.phone)
+                    Text(viewModel.phone)
                         .font(.subheadline)
                     Spacer()
                 }
@@ -60,6 +58,6 @@ struct ContactDetailView: View {
 
 struct ContactDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactDetailView(contactDetailVM: ContactDetailViewModel(Contact.default))
+        ContactDetailView(viewModel: ContactDetailViewModel(Contact.default))
     }
 }

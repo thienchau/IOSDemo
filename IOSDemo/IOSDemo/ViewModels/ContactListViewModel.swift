@@ -8,12 +8,22 @@
 
 import Foundation
 
+protocol ContactListViewModelProtocol: ObservableObject {
+    associatedtype Item: ContactRowViewModelProtocol
+    var errorMessage : String { get set }
+    var loading : Bool { get set }
+    var contactRowViewModels : [Item] { get }
+    
+    func loadData()
+    func refreshData()
+}
 
-final class ContactListViewModel: ObservableObject {
+final class ContactListViewModel: ContactListViewModelProtocol {
+    typealias Item = ContactRowViewModel
     
     @Published var errorMessage : String = ""
     @Published var loading = false
-    @Published private(set) var contactRowViewModels : [ContactRowViewModel] = []
+    @Published private(set) var contactRowViewModels : [Item] = []
     
     func loadData() {
         if CoreDataManager.shared.countContacts() > 0 {
@@ -29,9 +39,17 @@ final class ContactListViewModel: ObservableObject {
     
     private func loadFromServer() {
         self.loading = true
-        APIService.shared.response(from: UserRequestType()) {
-            response, error in
-            if (error == nil && response != nil) {
+        APIService.shared.response(from: UserRequestType()) { result in
+            
+            switch result {
+            case .failure(let error):
+                switch error {
+                case .responseError:
+                    self.errorMessage = "serverError"
+                case .parseError:
+                    self.errorMessage = "parseError"
+                }
+            case .success(let response):
                 if let response = response as? GetUserResponse {
                     var contacts = response.results
                     contacts.sort { (contact1, contact2) -> Bool in
@@ -43,12 +61,7 @@ final class ContactListViewModel: ObservableObject {
                     self.errorMessage = ""
                 }
             }
-            else if (error == APIServiceError.responseError) {
-                self.errorMessage = "serverError"
-            }
-            else if (error == APIServiceError.parseError) {
-                self.errorMessage = "parseError"
-            }
+            
             self.loading = false
         }
     }

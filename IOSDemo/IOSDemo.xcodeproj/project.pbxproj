@@ -151,6 +151,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		895A90502491AE44006C2E5D /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				89AC9CEE24369E9100703E9E /* GetUsersResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		895A90512491AE4F006C2E5D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				89AC9D222436AEEC00703E9E /* UserRequestType.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		896973962436E15E00BE3A3B /* ContactDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				89AC9D082436A2EA00703E9E /* ManagedObject */,
-				89AC9CEE24369E9100703E9E /* GetUsersResponse.swift */,
 				89AC9CF024369EB500703E9E /* Contact.swift */,
 				8969738E2436DFE800BE3A3B /* Coordinates.swift */,
 				896973902436E01D00BE3A3B /* Location.swift */,
@@ -344,10 +359,11 @@
 		89AC9CE724369D6400703E9E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				895A90512491AE4F006C2E5D /* Requests */,
+				895A90502491AE44006C2E5D /* Responses */,
 				89AC9CEC24369E6900703E9E /* APIService.swift */,
 				89AC9D022436A12400703E9E /* APIServiceError.swift */,
 				89AC9D172436A61400703E9E /* APIRequestType.swift */,
-				89AC9D222436AEEC00703E9E /* UserRequestType.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";

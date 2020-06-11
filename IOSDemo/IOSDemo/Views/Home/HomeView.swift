@@ -8,11 +8,22 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeView<Model>: View where Model: ContactListViewModelProtocol {
     
     @State private var showLogoutAlert = false
     
-    @ObservedObject var contactListViewModel: ContactListViewModel = ContactListViewModel()
+    @ObservedObject var viewModel: Model
+    
+    
+    init(viewModel: Model) {
+        self.viewModel = viewModel
+        setupTable()
+    }
+    
+    func setupTable() {
+        UITableView.appearance().backgroundColor = .mainBg
+        UITableViewCell.appearance().backgroundColor = .mainBg
+    }
     
     var logoutButton: some View {
         Button(action: {
@@ -33,7 +44,7 @@ struct HomeView: View {
     
     var refreshButton: some View {
         Button(action: {
-            self.contactListViewModel.refreshData()
+            self.viewModel.refreshData()
         }) {
             Image(systemName: "arrow.clockwise")
                 .imageScale(.large)
@@ -41,18 +52,13 @@ struct HomeView: View {
         }
     }
     
-    init() {
-        UITableView.appearance().backgroundColor = .mainBg
-        UITableViewCell.appearance().backgroundColor = .mainBg
-    }
-    
     var body: some View {
-        LoadingView(isShowing: self.$contactListViewModel.loading) {
+        LoadingView(isShowing: self.$viewModel.loading) {
             NavigationView {
                 List {
-                    ForEach(self.contactListViewModel.contactRowViewModels) { contactRowViewModel in
-                        NavigationLink(destination: ContactDetailView(contactDetailVM: ContactDetailViewModel(contactRowViewModel.contact))) {
-                            ContactRowView(contactRowViewModel: contactRowViewModel)
+                    ForEach(self.viewModel.contactRowViewModels) { contactRowViewModel in
+                        NavigationLink(destination: ContactDetailView(viewModel: ContactDetailViewModel(contactRowViewModel.contact))) {
+                            ContactRowView(viewModel: contactRowViewModel)
                         }
                     }
                 }
@@ -60,7 +66,7 @@ struct HomeView: View {
                 .navigationBarItems(leading: self.logoutButton, trailing: self.refreshButton)
             }
             .onAppear() {
-                self.contactListViewModel.loadData()
+                self.viewModel.loadData()
             }
         }
     }
@@ -68,6 +74,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewModel: ContactListViewModel())
     }
 }
