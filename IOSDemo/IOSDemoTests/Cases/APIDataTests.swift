@@ -18,14 +18,17 @@ class APIDataTests: XCTestCase {
     func testCount() throws {
         let expectation = XCTestExpectation(description: "Call API for Data")
         
-        APIService.shared.response(from: UserRequestType()) {
-            response, error in
-            if (error == nil && response != nil) {
-                if let response = response as? GetUserResponse {
-                    let count = response.results.count
-                    XCTAssertEqual(count, 30)
-                    expectation.fulfill()
-                }
+        let userSevice = UserSerice()
+        
+        let _ = userSevice.getUsers().sink { result in
+            switch result {
+            case .success(let contacts):
+                let count = contacts.count
+                XCTAssertEqual(count, 30)
+                expectation.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+                expectation.fulfill()
             }
         }
         
