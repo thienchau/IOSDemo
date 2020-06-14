@@ -8,11 +8,17 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct LoginView<Model>: View where Model: LoginViewModelProtocol {
     
     @State private var user = ""
     @State private var pass = ""
     @State private var showErrorAlert = false;
+    
+    @ObservedObject var viewModel: Model
+    
+    init(viewModel: Model) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         ZStack {
@@ -65,7 +71,7 @@ struct LoginView: View {
                     VStack {
                         Button(action: {
                             if self.validEmail() && self.validPassword() {
-                                AppDefaults.shared.saveLogin(true)
+                                self.viewModel.saveLogin()
                                 NotificationCenter.default.post(.init(name: .didLogin))
                             } else {
                                 self.showErrorAlert = true
@@ -101,13 +107,8 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        //        ForEach(["en", "vi"], id: \.self) {
-        //            localIdentifier in
-        //            LoginView().environment(\.locale, .init(identifier: localIdentifier))
-        //        }
-        
-        LoginView()
+                
+        LoginView(viewModel: LoginViewModel())
         
     }
 }

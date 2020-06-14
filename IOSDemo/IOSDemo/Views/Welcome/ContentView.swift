@@ -14,12 +14,18 @@ enum WelcomeType {
     case home
 }
 
-struct ContentView: View {
+struct ContentView<Model>: View where Model: ContentViewModelProtocol {
     
     @State var viewType = WelcomeType.splash
     @State var showSplash = true
     @State var loginNoti: NSObjectProtocol?
     @State var logoutNoti: NSObjectProtocol?
+    
+    @ObservedObject var viewModel: Model
+    
+    init(viewModel: Model) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         
@@ -28,7 +34,7 @@ struct ContentView: View {
             if self.viewType == .home {
                 HomeView(viewModel: ContactListViewModel(userService: UserSerice(networkService: NetworkService())))
             } else if self.viewType == .login {
-                LoginView()
+                LoginView(viewModel: LoginViewModel())
             }
             
             WelcomeView()
@@ -36,7 +42,7 @@ struct ContentView: View {
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                         withAnimation() {
-                            if AppDefaults.shared.getLogin() {
+                            if self.viewModel.getLogin() {
                                 self.viewType = .home
                             } else {
                                 self.viewType = .login
@@ -62,6 +68,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: ContentViewModel())
     }
 }

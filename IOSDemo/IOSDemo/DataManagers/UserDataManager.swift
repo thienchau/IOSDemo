@@ -9,17 +9,28 @@
 import Foundation
 import CoreData
 
-class CoreDataManager {
+
+protocol UserDataManagerProtocol {
     
-    static let shared = CoreDataManager(moc: NSManagedObjectContext.current)
+    func getAllContact() -> [Contact]
+    func countContacts() -> Int
+    func saveContacts(contacts: [Contact])
+    func deleteAll()
+    
+}
+
+class UserDataManager {
     
     private var moc: NSManagedObjectContext
     
-    private init(moc: NSManagedObjectContext) {
+    init(moc: NSManagedObjectContext = NSManagedObjectContext.current) {
         self.moc = moc
     }
+}
+
+extension UserDataManager: UserDataManagerProtocol {
     
-    func getAllContact() -> [ContactEntity] {
+    func getAllContact() -> [Contact] {
         
         var contactEntities = [ContactEntity]()
         let contactEntityRequest: NSFetchRequest<ContactEntity> = ContactEntity.fetchRequest();
@@ -32,7 +43,9 @@ class CoreDataManager {
             print(error)
         }
         
-        return contactEntities
+        return contactEntities.map { entity -> Contact in
+            entity.contact
+        }
     }
     
     func countContacts() -> Int {
