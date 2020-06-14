@@ -14,7 +14,6 @@ struct HomeView<Model>: View where Model: ContactListViewModelProtocol {
     
     @ObservedObject var viewModel: Model
     
-    
     init(viewModel: Model) {
         self.viewModel = viewModel
         setupTable()
@@ -35,8 +34,7 @@ struct HomeView<Model>: View where Model: ContactListViewModelProtocol {
         }
         .alert(isPresented: self.$showLogoutAlert) {
             Alert(title: Text("logout"), primaryButton: Alert.Button.default(Text("OK"), action: {
-                AppDefaults.shared.saveLogin(false)
-                CoreDataManager.shared.deleteAll()
+                self.viewModel.logout()
                 NotificationCenter.default.post(name: .didLogout, object: nil)
             }), secondaryButton: .cancel(Text("cancel")))
         }

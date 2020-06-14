@@ -16,6 +16,7 @@ protocol ContactListViewModelProtocol: ObservableObject {
     
     func loadData()
     func refreshData()
+    func logout()
 }
 
 final class ContactListViewModel: ContactListViewModelProtocol {
@@ -25,14 +26,20 @@ final class ContactListViewModel: ContactListViewModelProtocol {
     @Published var loading = false
     @Published private(set) var contactRowViewModels : [Item] = []
     
-    var userService: UserSeviceProtocol
+    private var userService: UserSeviceProtocol
+    private var userDataManager: UserDataManagerProtocol
+    private var appDefaults: AppDefaultsProtocol
     
-    init(userService: UserSeviceProtocol) {
+    init(userService: UserSeviceProtocol,
+         userDataManager: UserDataManagerProtocol = UserDataManager(),
+         appDefaults: AppDefaultsProtocol = AppDefaults()) {
         self.userService = userService
+        self.userDataManager = userDataManager
+        self.appDefaults = appDefaults
     }
     
     func loadData() {
-        if CoreDataManager.shared.countContacts() > 0 {
+        if self.userDataManager.countContacts() > 0 {
             loadFromDatabase()
         } else {
             loadFromServer()
@@ -62,8 +69,8 @@ final class ContactListViewModel: ContactListViewModelProtocol {
                         return contact1.name.first < contact2.name.first
                     }
                     self.contactRowViewModels = contacts.map(ContactRowViewModel.init)
-                    CoreDataManager.shared.deleteAll()
-                    CoreDataManager.shared.saveContacts(contacts: contacts)
+                    self.userDataManager.deleteAll()
+                    self.userDataManager.saveContacts(contacts: contacts)
                     self.errorMessage = ""
                 case .failure(let error):
                     self.errorMessage = error.localizedDescription
@@ -74,7 +81,12 @@ final class ContactListViewModel: ContactListViewModelProtocol {
     
     private func loadFromDatabase() {
         self.loading = true
-        self.contactRowViewModels = CoreDataManager.shared.getAllContact().map(ContactRowViewModel.init)
+        self.contactRowViewModels = self.userDataManager.getAllContact().map(ContactRowViewModel.init)
         self.loading = false
+    }
+    
+    func logout() {
+        self.appDefaults.saveLogin(false)
+        self.userDataManager.deleteAll()
     }
 }

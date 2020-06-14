@@ -8,14 +8,14 @@
 
 import Foundation
 
-class AppDefaults {
+protocol AppDefaultsProtocol {
+    func saveLogin(_ isLogin: Bool)
+    func getLogin() -> Bool
+}
+
+class AppDefaults: AppDefaultsProtocol {
     
     private let LOGIN_TAG = "didLogin"
-    
-    static let shared = AppDefaults()
-    
-    private init() {
-    }
     
     func saveLogin(_ isLogin: Bool) {
         UserDefaults.standard.set(isLogin, forKey: LOGIN_TAG)

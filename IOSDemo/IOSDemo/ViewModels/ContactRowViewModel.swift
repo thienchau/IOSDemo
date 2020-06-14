@@ -32,7 +32,4 @@ final class ContactRowViewModel: ContactRowViewModelProtocol {
         self.subContent = contact.email
     }
     
-    convenience init(_ contact: ContactEntity) {
-        self.init(contact.contact)
-    }
 }
