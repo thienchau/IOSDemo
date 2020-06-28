@@ -51,7 +51,7 @@ struct HomeView<Model>: View where Model: ContactListViewModelProtocol {
     }
     
     var body: some View {
-        LoadingView(isShowing: self.$viewModel.loading) {
+        LoadingView(isShowing: self.viewModel.loading) {
             NavigationView {
                 List {
                     ForEach(self.viewModel.contactRowViewModels) { contactRowViewModel in

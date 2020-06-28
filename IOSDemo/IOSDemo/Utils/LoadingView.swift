@@ -25,7 +25,7 @@ struct ActivityIndicator: UIViewRepresentable {
 
 struct LoadingView<Content>: View where Content: View {
 
-    @Binding var isShowing: Bool
+    var isShowing: Bool
     var content: () -> Content
 
     var body: some View {
@@ -55,7 +55,7 @@ struct LoadingView<Content>: View where Content: View {
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView(isShowing: .constant(true)) {
+        LoadingView(isShowing: true) {
             NavigationView {
                 List(["1", "2", "3", "4", "5"], id: \.self) { row in
                     Text(row)

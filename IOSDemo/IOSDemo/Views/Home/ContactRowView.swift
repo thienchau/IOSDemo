@@ -11,7 +11,7 @@ import URLImage
 
 struct ContactRowView<Model>: View where Model: ContactRowViewModelProtocol {
 
-    var viewModel: Model
+    let viewModel: Model
     
     var body: some View {
         
